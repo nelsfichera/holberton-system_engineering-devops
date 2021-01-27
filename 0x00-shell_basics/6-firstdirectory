@@ -1,2 +1,3 @@
 #!/bin/bash
-mkdir holberton TMP \n
+mkdir holberton TMP
+
