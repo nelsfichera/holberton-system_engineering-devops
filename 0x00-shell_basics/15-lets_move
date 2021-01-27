@@ -1,2 +1,3 @@
 #!/bin/bash
-mv [:UPPER:] /tmp/u
+mv /tmp/u [:UPPER:] 
+
