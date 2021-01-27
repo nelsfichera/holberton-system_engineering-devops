@@ -1,3 +1,3 @@
 #!/bin/bash
-ls *[[:digit:]] -a
+ls -a  *[[:digit:]] 
 
