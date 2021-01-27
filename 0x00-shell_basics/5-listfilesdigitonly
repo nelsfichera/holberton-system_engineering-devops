@@ -1,2 +1,2 @@
-#!/bin/bash ls -l -a  *[[:digit:]] 
+#!/bin/bash ls -l -a id -G
 
