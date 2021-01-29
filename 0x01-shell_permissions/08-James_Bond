@@ -1,2 +1,0 @@
-#!/bin/bash
-chmod u=000 g=000 o=777
