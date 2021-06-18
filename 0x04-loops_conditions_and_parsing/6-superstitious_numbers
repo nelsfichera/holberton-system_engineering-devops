@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#Prints 1-20 with bad luck
+x=1
+y='bad luck from'
+while [ $x -le 20 ]
+do
+	echo $x
+	case $x in
+	4) 
+		echo "$y" China
+		;;
+	9)
+		echo "$y" Japan
+		;;
+	17)
+		echo "$y" Italy
+		;;
+	esac
+	let x++
+done

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#prints names of files that have -
+cmd=$(ls)
+for item in $cmd
+do
+	echo $item | cut -f 2 -d '-'
+done
