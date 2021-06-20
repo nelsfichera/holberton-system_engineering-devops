@@ -3,5 +3,5 @@
 cmd=$(ls)
 for item in $cmd
 do
-	echo $item | cut -f 2 -d '-'
+	echo "$item" | cut -f 2 -d '-'
 done
