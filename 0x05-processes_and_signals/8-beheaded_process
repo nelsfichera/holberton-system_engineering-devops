@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#beheads a process
+process=$(pgrep -f "7-highlander")
+kill -SIGKILL $process
