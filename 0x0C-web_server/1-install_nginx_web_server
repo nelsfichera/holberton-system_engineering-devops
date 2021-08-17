@@ -1,5 +1,34 @@
 #!/usr/bin/env bash
 #Installs nginx and sets up page
-apt-get updated && apt-get install nginx -y
-echo "Holberton School" > /var/www/html/index.html
-service nginx start
+
+apt-get install -y nginx 1>/dev/null
+
+#create page
+mkdir /www
+echo "<html>
+	<head>
+		<title> Nels is the best </title>
+	</head>
+	<body>
+		<p>Holberton School</p>
+	</body>
+</html>" > /www/index.html
+
+echo "user root;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+	worker_connections 768;
+}
+http{
+	server{
+		listen 0.0.0.0:80;
+		location / {
+			root /www;
+			index index.html;
+		}
+	}
+}" > holberton.conf
+
+nginx -c /holberton.conf
