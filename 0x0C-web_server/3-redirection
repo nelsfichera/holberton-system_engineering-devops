@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 #Installs nginx and sets up page
-apt-get updated && apt-get install nginx -y
-
-#Sets the content of the root nginx page
-echo "Holberton School" > /var/www/html/index.html
-
-#checks if thre is redirect_me
-GREP_RES=$(grep "redirect_me" /etc/nginx/sites-available/default)
-    if [[ -z $GREP_RES ]]; then
-    #declare input
-    IN_STRING="\\\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
-    #Add line in file
-    sed -i "48i $IN_STRING" /etc/nginx/sites-available/default
-fi
+sudo apt-get -y update
+sudo apt-get -y install nginx
+mkdir -p /var/www/html
+sudo service nginx start
+sudo sh -c 'echo "Holberton School for the win!" > /var/www/html/index.html'
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /var/www/html;
+    index  index.html index.htm;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}" > /etc/nginx/sites-available/default
 service nginx start
