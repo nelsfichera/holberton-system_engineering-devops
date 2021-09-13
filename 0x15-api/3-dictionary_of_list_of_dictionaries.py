@@ -5,24 +5,23 @@ if __name__ == '__main__':
     from requests import get
     from sys import argv
 
-    path = 'https://jsonplaceholder.typicode.com/users'
-    name = get(path).json()
+    url_user = "https://jsonplaceholder.typicode.com/users"
+    url_tasks = "https://jsonplaceholder.typicode.com/todos"
+    users = get(url_user).json()
+    todos = get(url_tasks).json()
 
-    todo = get('https://jsonplaceholder.typicode.com/todos').json()
-
-    task_dict = {}
-    name_list = []
+    data = {}
 
     for user in users:
-        task_dict[user['id']] = []
-        name_list.append(user['username'])
+        task_list = []
+        for task in todos:
+            task_dict = {}
+            if task['userId'] == user['id']:
+                task_dict["task"] = task['title']
+                task_dict["completed"] = task['completed']
+                task_dict["username"] = user['username']
+                task_list.append(task_dict)
+        data[user['id']] = task_list
 
-    for task in todo:
-        temp_dict = {}
-        temp_dict['username'] = namelist[task['userId'] - 1]
-        temp_dict['task'] = task['title']
-        temp_dict['completed'] = task['completed']
-        task_dict['userId'].append(temp_dict)
-
-    with open('todo_all_employees.json', 'w') as file:
-        dump(task_dict, file)
+    with open("todo_all_employees.json", "w") as file:
+        json.dump(data, file)
