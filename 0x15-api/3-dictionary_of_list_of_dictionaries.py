@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 '''fetches todo list progress and exports to json'''
-if __name __ = '__main__':
-    from json import dump
+if __name__ == '__main__':
+    import json
     from requests import get
+    from sys import argv
 
     path = 'https://jsonplaceholder.typicode.com/users'
     name = get(path).json()
