@@ -4,22 +4,23 @@ if __name__ == '__main__':
     from requests import get
     from sys import argv
 
-    path = 'https://jsonplaceholder.typicode.com/users/{}'
-    name = get(path.format(argv[1])).json()['name']
+    identity = argv[1]
+    url_user = "https://jsonplaceholder.typicode.com/users/{}".format(identity)
+    url_tasks = "https://jsonplaceholder.typicode.com/todos"
+    name = get(url_user).json()["name"]
+    todo = get(url_tasks).json()
 
-    to_do = get('https://jsonplaceholder.typicode.com/todos').json()
     complete = 0
-    total = 0
-    to_do_list = ''
+    task_total = 0
+    task_list = []
 
-    for task in to_do:
-        if task['userId'] == int(argv[1]):
-            total = total + 1
+    for task in todo:
+        if task['userId'] == int(identity):
+            task_total += 1
             if task['completed'] is True:
-                complete = complete + 1
-                to_do_list += "\t " + task['title'] + "\n"
-
-    print('Employee {} is done with tasks({}/{}):\n{}'.format(name, complete,
-                                                              total,
-                                                              to_do_list_),
-          end='')
+                complete += 1
+                task_list.append(task['title'])
+    print("Employee {} is done with tasks({}/{}):"
+          .format(name, complete, task_total))
+    for title in task_list:
+            print("\t {}".format(title))
