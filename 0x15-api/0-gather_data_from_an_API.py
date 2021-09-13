@@ -13,7 +13,7 @@ if __name__ == '__main__':
     to_do_list = ''
 
     for task in to_do:
-        if task['userId'] == int(av[1]):
+        if task['userId'] == int(argv[1]):
             total = total + 1
             if task['completed'] is True:
                 complete = complete + 1
