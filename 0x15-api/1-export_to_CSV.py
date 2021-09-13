@@ -7,12 +7,12 @@ if __name__ == '__main__':
     identity = argv[1]
     url_user = "https://jsonplaceholder.typicode.com/users/{}".format(identity)
     url_tasks = "https://jsonplaceholder.typicode.com/todos"
-    name = get(url_user).json()["name"]
+    name = get(url_user).json()["username"]
     todo = get(url_tasks).json()
 
-    with open("{}.csv".format(identity), "a") as csv:
+    with open("{}.csv".format(identity), mode="w") as file:
         for task in todo:
             if task['userId'] == int(identity):
-                csv.write('"{}","{}","{}","{}"\n'
-                          .format(identity, name, str(task['completed']),
-                                  task['title']))
+                r = csv.writer(file, delimiter=',', quotechar='"',
+                               quoting=csv.QUOTE_ALL)
+                r.writerow([str(identity), name, task['completed'], task['title']])
