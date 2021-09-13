@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''fetches todo list progress and exports to json'''
-if __name __ == '__main__':
+if __name__ == '__main__':
     from sys import argv
     from json import dump
     from requests import get
