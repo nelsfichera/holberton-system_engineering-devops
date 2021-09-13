@@ -2,7 +2,7 @@
 '''fetches todo list progress and exports to json'''
 if __name__ == '__main__':
     from sys import argv
-    from json import dump
+    import json
     from requests import get
 
     identity = argv[1]
