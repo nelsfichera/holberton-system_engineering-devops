@@ -5,21 +5,23 @@ if __name __ = '__main__':
     from json import dump
     from requests import get
 
-    path = 'https://jsonplaceholder.typicode.com/users/{}'
-    name = get(path.format(argv[1])).json()['username']
+    identity = argv[1]
+    url_user = "https://jsonplaceholder.typicode.com/users/{}".format(identity)
+    url_tasks = "https://jsonplaceholder.typicode.com/todos"
+    name = get(url_user).json()["username"]
+    todo = get(url_tasks).json()
 
-    todo = get('https://jsonplaceholder.typicode.com/todos').json()
-
-    task_dict = {}
-    task_dict[argv[1]] = []
-
+    task_list = []
     for task in todo:
-        if task['userId'] == int(argv[1]):
-            temp_dict = {}
-            temp_dict['task'] = task['title']
-            temp_dict['completed'] = task['completed']
-            temp_dict['username'] = name
-            task_dict[argv[1]].append(temp_dict)
+        task_dict = {}
+        if task['userId'] == int(identity):
+            task_dict["task"] = task['title']
+            task_dict["completed"] = task['completed']
+            task_dict["username"] = name
+            task_list.append(task_dict)
 
-    with open('{}.json'.format(argv[1]), 'w') as file:
-        dump(task_dict, file)
+    data = {}
+    data[identity] = task_list
+
+    with open("{}.json".format(identity), "w") as file:
+        json.dump(data, file)
