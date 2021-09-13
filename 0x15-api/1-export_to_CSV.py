@@ -3,6 +3,7 @@
 if __name__ == '__main__':
     from requests import get
     from sys import argv
+    import csv
 
     identity = argv[1]
     url_user = "https://jsonplaceholder.typicode.com/users/{}".format(identity)
