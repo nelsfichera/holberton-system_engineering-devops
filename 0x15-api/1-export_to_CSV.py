@@ -1,19 +1,18 @@
 #!/usr/bin/python3
-'''gathers data re: todo lists and exports to csv'''
+'''fetches progress of todo list'''
 if __name__ == '__main__':
-    from sys import argv
-    import csv
     from requests import get
+    from sys import argv
 
-    path = 'https://jsonplaceholder.typicode.com/users/{}'
-    name = get(path.format(argv[1])).json()['username']
+    identity = argv[1]
+    url_user = "https://jsonplaceholder.typicode.com/users/{}".format(identity)
+    url_tasks = "https://jsonplaceholder.typicode.com/todos"
+    name = get(url_user).json()["name"]
+    todo = get(url_tasks).json()
 
-    todo = get('https://jsonplaceholder.typicode.com/todos').json()
-
-    with open('{}.csv'.format(argv[1]), mode='w') as file:
-        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
-
+    with open("{}.csv".format(identity), "a") as csv:
         for task in todo:
-            if task['userId'] == int(argv[1]):
-                writer.writerrow([task['userId'], name, task['completed'],
-                                 task['title']])
+            if task['userId'] == int(identity):
+                csv.write('"{}","{}","{}","{}"\n'
+                          .format(identity, name, str(task['completed']),
+                                  task['title']))
