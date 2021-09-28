@@ -4,13 +4,13 @@ import requests
 import time
 
 
-def recurse(subreddit, hot_list=[], after="NULL"):
+def recurse(subreddit, hot_list=[]):
     '''does the thing'''
     url = 'https://www.redit.com/r/{}/hot.json'.format(subreddit)
     headers = headers = {'User-Agent': 'Python/1.0(Holberton Project)'}
     request = requests.get(url, headers=headers, allow_redirects=False,
-                           params=params)
-    params = {'after': after}
+                           params=payload)
+    payload = {'after': after}
     try:
         for post in request.json()['data']['children']:
             hot_list.append(post['data']['title'])
