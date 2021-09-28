@@ -12,4 +12,4 @@ def top_ten(subreddit):
         for post in request.json()['data']['children']:
             print(post['data']['title'])
     except Exception:
-        print(None)
+        print('None')
