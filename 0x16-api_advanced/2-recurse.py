@@ -6,7 +6,7 @@ import time
 
 def recurse(subreddit, hot_list=[]):
     '''does the thing'''
-    url = 'https://www.redit.com/r/{}/hot.json'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = headers = {'User-Agent': 'Python/1.0(Holberton Project)'}
     request = requests.get(url, headers=headers, allow_redirects=False,
                            params=payload)
