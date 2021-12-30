@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Prints Holberton School ten times to stdout
+x=0
+until [ $x -eq 10 ]
+do
+	echo Holberton School
+	let x++
+done
