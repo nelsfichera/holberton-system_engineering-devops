@@ -1,0 +1,289 @@
+
+:root {
+    /* colors & gradient */
+    --color-violet: rgba(194, 113, 255, 1);
+    --color-white: rgba(255, 255, 255, 1);
+    --color-auto: rgba(0, 0, 0, 1);
+    --color-black-custom: rgba(7, 22, 41, 1);
+    --gradient-color: rgba(41, 48, 61, 0.0001);
+
+    /*fonts*/
+    --font-size-xxs: 12px;
+    --font-size-sml: 14px;
+    --font-size-med: 16px;
+    --font-size-mid: 18px;
+    --font-size-mod: 22px;
+    --font-size-lrg: 32px;
+    --font-size-xlg: 120px;
+
+    /* line heights */
+    --line-height-sml: 16px;
+    --line-height-med: 24px;
+    --line-hight-mid: 26px;
+    --line-height-mod: 27px;
+    --line-height-lrg: 27px;
+    --line-height-xlg: 33.6px; 
+}
+/* normalize via the condensed meyer reset */
+html,body,div,span,applet,object,iframe,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,label,legend,p,blockquote,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}body{line-height:1;color:black;background:white;}:focus{outline:0;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;font-weight:normal;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul{list-style:none;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}blockquote:before,blockquote:after,q:before,q:after{content:"";}blockquote,q{quotes:"" "";}abbr,acronym{border:0;}
+
+/* font faces*/
+@font-face {
+    font-family: 'Spin-Cycle-OT';
+    src: url('./fonts/Spin-Cycle-OT/spincycle_ot.otf') format('opentype');
+    src: local('./fonts/Spin-Cycle-OT/spincycle_ot.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sans Source Pro Regular';
+    font-weight: regular;
+    src: url('./fonts/source-sans-pro/SourceSansPro-Regular.otf') format('opentype');
+    src: local('./fonts/source-sans-pro/SourceSansPro-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sans Source Pro Black';
+    src:url('./fonts/source-sans-pro/SourceSansPro-Black.otf'), format('opentype');
+    src:local('./fonts/source-sans-pro/SourceSansPro-Black.otf'), format('opentype');
+}
+
+@font-face {
+    font-family: 'Sans Source Pro Bold';
+    font-weight: bold;
+    src:url('./fonts/source-sans-pro/SourceSansPro-Bold.otf') format('opentype');
+    src:local('./fonts/source-sans-pro/SourceSansPro-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sans Source Pro Semibold';
+    font-weight: bold;
+    src:url('./fonts/source-sans-pro/SourceSansPro-Semibold.otf') format('opentype');
+    src:local('./fonts/source-sans-pro/SourceSansPro-Semibold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sans Source Pro Italic';
+    font-weight: bold;
+    src:url('./fonts/source-sans-pro/SourceSansPro-It.otf') format('opentype');
+    src:local('./fonts/source-sans-pro/SourceSansPro-It.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sans Source Pro Light';
+    font-weight: bold;
+    src:url('./fonts/source-sans-pro/SourceSansPro-Light.otf') format('opentype');
+    src:local('./fonts/source-sans-pro/SourceSansPro-Light.otf') format('opentype');
+}
+
+.header-home-page {
+    background-image: url('./images/pic_1.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.nav-toggler {
+    display: none;
+}
+
+rect {
+    color: var(--color-white);
+}
+
+h1 {
+    font-family: 'Sans Source Pro Bold', Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-xlg);
+}
+
+h2 {
+    font-family: 'Sans Source Pro Light', Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-lrg);
+}
+
+strong {
+    color: var(--color-violet);
+    font-family: 'Sans Source Pro Bold', Arial, Helvetica, sans-serif;
+}
+
+
+ul {
+    font-family: 'Sans Source Pro Bold', Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-med);
+}
+
+nav ul {
+    font-size: var(--font-size-xxs);
+}
+
+.pt-5, .mt-5 {
+    padding-top: 6rem !important;
+    padding-bottom: 0 !important;
+}
+
+.btn-primary {
+    background-color: var(--color-violet) !important;
+    font-family: 'Sans Source Pro Semibold', Arial, Helvetica, sans-serif;
+}
+
+.img-thumbnail {
+    border: 0px;
+    box-shadow: none;
+    width: 5rem;
+    background: transparent;
+}
+
+.pros {
+    padding: .5rem;
+}
+
+.card {
+    background-color: transparent;
+    border: 0px;
+    box-shadow: none;
+}
+
+.card-title {
+    font-family: 'Sans Source Pro Black', Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-mid);
+    font-weight: 700;
+}
+
+.card-text {
+    font-family: 'Sans Source Pro Italic', Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-med);
+}
+
+
+
+section {
+    background-color: var(--color-violet);
+    font-family: 'Sans Source Pro Regular', Arial, Helvetica, sans-serif;
+    font-size: var(--font-size-med);
+
+}
+
+.carousel-control-prev-icon{
+    background-image: url('./images/arrow_white_left.png');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height: 10vh;
+    align-self: center;
+    position: relative;
+    /* border: 0px;
+    box-shadow: none; */
+    /* width: 5rem; */
+    /* background: transparent; */
+
+}
+
+.carousel-control-next-icon{
+    background-image: url('./images/arrow_white_right.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height: 10vh;
+    align-self: center;
+    position: relative;
+    /* border: 0px;
+    box-shadow: none; */
+    /* width: 5rem; */
+    /* background: transparent; */
+}
+
+.tutorials {
+    background-color: var(--color-white);
+    
+
+}
+
+.membership {
+    background-color: var(--color-black-custom);
+
+}
+
+.vids {
+
+}
+
+footer {
+    background-color: var(--color-black-custom);
+    font-family: 'Sans Source Pro Light', Arial, Helvetica, sans-serif;
+    font-weight: light;
+
+}
+
+header .pricing {
+
+}
+
+.pricing-hero {
+
+}
+
+.pricing-grid {
+
+}
+
+.quote-carosel-pricing {
+
+}
+
+.faq-grid {
+
+}
+
+footer .pricing {
+
+}
+
+header .courses {
+
+}
+
+.courses-hero {
+
+}
+
+.search {
+
+}
+
+.results {
+
+}
+
+footer .courses {
+
+}
+
+/* // X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .nav-lg-toggler {
+        display: none;
+    }
+ }
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+   
+    
+ }
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { }
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {  }
+
+/* // X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {  }
