@@ -13,47 +13,50 @@
     <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-    <header class="pricing-header">
-        <div class="container">
-            <nav class="navbar navbar-expand-sm bg-transparent">
-                <button class="navbar-toggler mt-3" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="holberton_school-icon-menu text-white"></span>
-                </button>
-                <a class="navbar-brand d-sm-none mx-auto text-center" href="homepage.html">
-                    <img class="my-3 ml-n5" src="images/smile_off.png" width="30" height="23" alt="Smile" loading="lazy">
-                    <div class="w-100"></div>
-                    <img class="mb-3 ml-n5" src="images/logo.png" width="115" height="30" alt="Logo" loading="lazy">
-                </a>
-                <a class="navbar-brand d-none d-sm-block" href="homepage.html">
-                    <img class="m-3" src="images/smile_off.png" width="37" height="30" alt="Smile" loading="lazy">
-                    <img src="images/logo.png" width="115" height="30" alt="Logo" loading="lazy">
-                </a>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav d-sm-none">
-                        <div class="d-sm-none mx-auto mt-3">
-                            <a class="nav-link purple-text text-uppercase text-center underline ul-courses" href="#">Courses</a>
-                            <a class="nav-link text-white text-uppercase text-center" href="pricing.html">Pricing</a>
-                            <a class="nav-link text-white text-uppercase text-center" href="#login">Login</a>
-                        </div>
+    <header class="header container-fluid courses-header text-center text-white" id="courses">
+                <nav class="navbar justify-content-lg-around justify-content-md-around justify-content-sm-center">
+                    <div class="row-cols-3 px-2 mt-3">
+                      <img class="smile-school-logo mx-2" src="./images/smile_off.png"  href="./homepage.html" alt="Smile logo" style="max-width: 2.5rem; max-height: 2.5rem;">
+                      <img class="smile-school-logo" src="./images/logo.png" href="./homepage.html"alt="Smile School logo"/>
+                      <!-- HAMBURGER MENU -->
+                      <button class="navbar-toggler mt-3 d-lg-none d-md-none float-sm-left align-top" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+                        <span class="navbar-toggler-icon ">
+                          <svg class="icon" viewBox="0 0 100 80" width="40" height="40">
+                          <rect class="" width="100" height="5" fill="white" rx="5" ry="5"></rect>
+                          <rect y="30" width="80" height="5" fill="white" rx="5" ry="5"></rect>
+                          <rect y="60" width="100" height="5" fill="white" rx="5" ry="5"></rect>
+                        </svg></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav nav-bar nav align-items-center">
+                          <li class="row-sm-3 mt-3 mx-2 nav-item">
+                            <a href="./courses.html" class="nav-link text-white text-center">COURSES</a>
+                          </li>
+                          <li class="row-sm-3 mt-3 mx-2 nav-item">
+                            <a href="./pricing.html" class="nav-link text-white text-center">PRICING</a>
+                          </li>
+                          <li class="row-sm-3 mt-3 mx-2 nav-item">
+                            <a href="./login.html" class="nav-link text-white text-center">LOGIN</a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                    <div class="d-none d-sm-block ml-auto">
-                        <div class="navbar-nav">
-                            <a class="nav-link purple-text text-uppercase underline ul-courses" href="#">Courses</a>
-                            <a class="nav-link text-white text-uppercase" href="pricing.html">Pricing</a>
-                            <a class="nav-link text-white text-uppercase" href="#login">Login</a>
-                        </div>
+                    <!--  -->
+                    <div class="nav-lg-toggler d-lg-flex d-md-flex d-sm-none">
+                      <ul class="nav d-lg-flex d-md-flex d-sm-none row mt-3 unstyled justify-content-space-between">
+                        <li class="px-3 nav-item">
+                          <a href="./courses.html" class="nav-link text-white text-center">COURSES</a>
+                        </li>
+                        <li class="px-3 nav-item">
+                          <a href="./pricing.html" class="nav-link text-white text-center">PRICING</a>
+                        </li>
+                        <li class="px-3 nav-item">
+                          <a href="./login.html" class="nav-link text-white text-center">LOGIN</a>
+                        </li>
+                      </ul> 
                     </div>
-                </div>
-            </nav>
-        </div>
-
-    <!-- Hero section -->
-        <section class="d-none d-sm-block">
-            <div class="container text-center text-white py-5">
-                <h1 class="coiny font-32">« Don’t cry because it’s over.<br>
-                Smile because it happened. »</h1>
-            </div>
-        </section>
+                </nav>
+            <h4 class="courses-header-tag text-center pt-2 pb-5">« Don’t cry because it’s over.<br><strong>Smile</strong> because it happened. »</h4>
         </header>
     </body>
 </html>
